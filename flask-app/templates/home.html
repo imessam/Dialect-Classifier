@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!-- Starts image section -->
+    <div class="row justify-content-md-center mb-4">
+        <h2 class='text-primary'>Predict Dialect</h2>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/egy.png')}}" class="img-thumbnail" />
+                <div class="caption">
+                     <p><strong>Egypt</strong></p>
+                   </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/pl.png')}}" class="img-thumbnail" />
+                <div class="caption">
+                     <p><strong>Palestine</strong></p>
+                   </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/mor.png')}}" class="img-thumbnail" />
+                <div class="caption">
+                     <p><strong>Morocco</strong></p>
+                   </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ends image section -->
+    
+    <!-- Starts form section -->
+    <div class="form-container ">
+        <form class="form-horizontal" action = "/predict/" method="post">
+        
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="ara_text">Arabic text:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="ara_text" name="ara_text">
+              </div>
+            </div>
+            
+            <div class="form-group row"> 
+            <label class="control-label col-sm-2" for="">&nbsp;</label>                
+              <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-primary">Predict</button>
+              </div>
+            </div>
+			
+          </form>
+        <!-- Ends form section -->
+        
+        
+    </div>
+
+
+{% endblock %}
